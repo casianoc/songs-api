@@ -50,13 +50,29 @@ public class SongServlet extends HttpServlet {
 
 	@Override
 	protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		
+		InputStream requestBody = req.getInputStream();
 
+		Song song = new ObjectMapper().readValue(requestBody, Song.class);
 
+		Song updatedSong = dao.create(song);
+
+		resp.getWriter().print(new ObjectMapper().writeValueAsString(updatedSong));
+
+		resp.setContentType("application/json");
+
+		resp.setStatus(201);
+		
 	}
 
 	@Override
 	protected void doDelete(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
+		InputStream requestBody = req.getInputStream();
+
+		Song song = new ObjectMapper().readValue(requestBody, Song.class);
+		
+		dao.delete(song);
 	}
 	
 	@Override
