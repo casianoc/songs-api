@@ -12,7 +12,7 @@ import com.skillstorm.beans.Song;
 
 public class SongDAO {
 
-	private static final String url = "jdbc:mysql:localhost:3306/song-api";
+	private static final String url = "jdbc:mysql://localhost:3306/songs-api";
 	private static final String username = "root";
 	private static final String password = "root";
 	

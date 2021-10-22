@@ -62,17 +62,17 @@ document.getElementById('new-song-form').addEventListener('submit', function(eve
     event.preventDefault();
 
     var nameOnForm = document.getElementById('song-name').value;       // gets the data in the name input box
-    var ratingOnForm = document.getElementById('song-rating').value;
     var lengthOnForm = document.getElementById('song-length').value;
+    var ratingOnForm = document.getElementById('song-rating').value;
     var artistNameOnForm = document.getElementById('song-artist-name').value;
     var albumNameOnForm = document.getElementById('song-album-name').value;
     var genreOnForm = document.getElementById('song-genre').value;
     var yearReleasedOnForm = document.getElementById('song-year-released').value;
 
     var song = {
-        name : nameOnForm,
-        rating : ratingOnForm, 
+        name : nameOnForm, 
         length : lengthOnForm,
+        rating : ratingOnForm,
         artistName : artistNameOnForm,
         albumName : albumNameOnForm,
         genre : genreOnForm,
